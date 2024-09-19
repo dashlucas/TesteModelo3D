@@ -1,17 +1,31 @@
-
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-  </head>
-  <body>
-    <a-scene mindar-image="imageTargetSrc: ./targets.mind" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      <a-entity mindar-image-target="targetIndex: 0">
-        <a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
-        <a-gltf-model id="avatarModel" src="./Predio.gltf" scale="0.3 0.3 0.3" rotation="90 0 0"></a-gltf-model>
-      </a-entity>
-    </a-scene>
-  </body>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+  </script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+  </script>
+  <style>
+    model-viewer {
+      width: 800;
+      height: 400;
+    }
+  </style>
+
+<body style="margin: 0px; overflow: hidden;">
+  <model-viewer
+  ar
+  camera-controls
+  auto-rotate
+  touch-action="pan-y"
+  src="./Predio.gltf"
+  ios-src="./Predio.gltf"
+  ar-modes="scene-viewer quick-look"
+  >
+<button 
+slot="ar-button"
+style="background-color: white; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+  👋 Activate AR
+</button>
+</model-viewer>
+</body>
 </html>
