@@ -1,31 +1,26 @@
-<!DOCTYPE html>
 <html>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
-  </script>
-  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
-  </script>
-  <style>
-    model-viewer {
-      width:80vw;
-      height: 80vh;
-    }
-  </style>
-
-<body style="margin: 0px; overflow: hidden;">
-  <model-viewer
-  ar
-  camera-controls
-  auto-rotate
-  touch-action="pan-y"
-  src="./Predio.gltf"
-  ios-src="./Predio.gltf"
-  ar-modes="scene-viewer quick-look"
-  >
-<button 
-slot="ar-button"
-style="background-color: white; border-radius: 4px; height:20px; width:200px border: none; position: absolute; bottom: 95%; right: 50%; ">
-  👋 Activate AR
-</button>
-</model-viewer>
-</body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body>
+    <a-scene mindar-image="imageTargetSrc: targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
+        <video id="video" src="V_67_3Mb_27s.mp4" autoplay loop muted crossorigin="anonymous" playsinline></video>
+      </a-assets>
+      
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-video src="#video" width="1" height="0.562500" position="0 0 0" rotation="0 0 0"></a-video> <!-- Editar tamanho, escala e rotacao do texto! -->
+      </a-entity>
+    </a-scene>
+    
+    <script>
+      const video = document.getElementById('video');
+      video.muted = true; // Garante que o vídeo esteja silenciado
+      video.play(); // Tenta iniciar o vídeo automaticamente
+    </script>
+  </body>
 </html>
