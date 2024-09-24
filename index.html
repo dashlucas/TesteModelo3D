@@ -1,43 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
-  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+  </script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+  </script>
   <style>
-
     model-viewer {
-      width: 80vw;
+      width:80vw;
       height: 80vh;
-    }
-
-    button[slot="ar-button"] {
-      background-color: white;
-      border-radius: 4px;
-      height: 40px;
-      width: 200px;
-      border: none;
-      position: fixed; /* Fixa o botão na tela */
-      bottom: 20px; /* Distância da parte inferior da tela */
-      left: 50%; /* Posiciona no meio da tela */
-      transform: translateX(-50%); /* Centraliza o botão horizontalmente */
-      text-align: center;
-      font-size: 16px;
-      z-index: 1000; /* Garante que o botão fique sobre outros elementos */
     }
   </style>
 
-  <body>
-    <model-viewer
-      ar
-      camera-controls
-      auto-rotate
-      touch-action="pan-y"
-      src="./Predio.gltf"
-      ios-src="./Predio.gltf"
-      ar-modes="scene-viewer quick-look"
-    >
-      <button slot="ar-button">
-        👋 Activate AR
-      </button>
-    </model-viewer>
-  </body>
+<body style="margin: 0px; overflow: hidden;">
+  <model-viewer
+  ar
+  camera-controls
+  auto-rotate
+  touch-action="pan-y"
+  src="./Predio.gltf"
+  ios-src="./Predio.gltf"
+  ar-modes="scene-viewer quick-look"
+  >
+<button 
+slot="ar-button"
+style="background-color: white; border-radius: 4px; height:20px; width:200px border: none; position: absolute; bottom: 95%; right: 50%; ">
+  👋 Activate AR
+</button>
+</model-viewer>
+</body>
 </html>
