@@ -14,12 +14,13 @@
       height: 40px;
       width: 200px;
       border: none;
-      position: absolute;
-      bottom: 10%; /* Ajusta a posição vertical do botão */
-      left: 50%; /* Posiciona o botão no meio da tela */
+      position: fixed; /* Fixa o botão na tela */
+      bottom: 20px; /* Distância da parte inferior da tela */
+      left: 50%; /* Posiciona no meio da tela */
       transform: translateX(-50%); /* Centraliza o botão horizontalmente */
       text-align: center;
       font-size: 16px;
+      z-index: 1000; /* Garante que o botão fique sobre outros elementos */
     }
   </style>
 
